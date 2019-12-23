@@ -36,6 +36,19 @@
         height: 400%;
         font-size: 8.5px;}
       }
+        #infoDiv2 {
+          width: 125%;
+          height: 20px;
+          padding: 1px;
+          background-color: white;
+          margin-bottom: 40px;
+          font-size: 9px;
+          font-weight: bold;
+        }
+       @media only screen and (max-width: 600px) {
+          #infoDiv2 {
+          margin-bottom: -25px;}
+       }
       button {
         display: block;
         margin: 10px auto;
@@ -46,6 +59,9 @@
         padding: 4px 4px;
         cursor: pointer;
       }
+      .esri-ui-manual-container>.esri-component {
+        display: none !important;
+      } 
     </style>
 
     <script src="https://js.arcgis.com/4.13/"></script>
@@ -77,6 +93,7 @@
         });
 
         view.ui.add("infoDiv", "top-right");
+        view.ui.add("infoDiv2", "bottom-left");
 
         // When animating from one slide to the other, text will be displayed.
         // Descriptive text is stored in the title property of each slide.
@@ -149,5 +166,6 @@
       <div id="content"></div>
       <button id="start-btn">Start Tour</button>
     </div>
+    <div id="infoDiv2">Turn on hardware acceleration in your browser settings if no map displays</div>
   </body>
 </html>
